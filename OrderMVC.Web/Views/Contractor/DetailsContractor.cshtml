@@ -1,0 +1,71 @@
+﻿@model OrderMVC.Web.Models.Contractor
+
+@{
+    ViewData["Title"] = "Szczegóły kontrahenta";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Symbol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CountryID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NIP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NIP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pesel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pesel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PostOffice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PostOffice)
+        </dd>
+    </dl>
+</div>
+<div class="shadow rounded p-2">
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    <a asp-action="Index" class="btn btn-sm btn-outline-success" role="button" aria-pressed="true">Powrót do listy</a>
+</div>

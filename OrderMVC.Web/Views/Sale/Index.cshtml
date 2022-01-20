@@ -1,0 +1,91 @@
+﻿@model IEnumerable<OrderMVC.Web.Models.Sale>
+
+@{
+    ViewData["Title"] = "Lista zamówień";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="shadow rounded p-2">
+    @*<a asp-action="CreateCountry" class="btn btn-sm btn-outline-success" role="button" aria-pressed="true">Dodaj nowe zamówienie</a>*@
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberFull)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSigning)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deadline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.End)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeftToPay)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberFull)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaleData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @TestData.contractorList.FirstOrDefault(x => x.Id == item.ContractorId).Name
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateSigning)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deadline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.End)
+                </td>
+                <td>
+                    @TestData.saleStatusList.FirstOrDefault(x => x.Id == item.StatusID).Name
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeftToPay)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        @*<a class="btn btn-sm btn-outline-success" href="/Sale/Edit/@item.Id">Edytuj</a>*@
+                        <a class="btn btn-sm btn-outline-success" href="/Sale/ViewOrder/@item.Id">Podgląd</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

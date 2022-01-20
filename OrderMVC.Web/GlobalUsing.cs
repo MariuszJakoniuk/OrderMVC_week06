@@ -1,0 +1,9 @@
+﻿global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using OrderMVC.Web;
+global using OrderMVC.Web.Data;
+global using OrderMVC.Web.Models;
+global using System.ComponentModel;
+global using System.Diagnostics;
+global using System.ComponentModel.DataAnnotations;

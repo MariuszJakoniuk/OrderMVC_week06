@@ -1,0 +1,68 @@
+﻿@model IEnumerable<OrderMVC.Web.Models.Contractor>
+
+@{
+    ViewData["Title"] = "Lista kontrahentów";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<div class="shadow rounded p-2">
+    @*<a asp-action="CreateContractor" class="btn btn-sm btn-outline-success" role="button" aria-pressed="true">Dodaj nowego kontrahenta</a>*@
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Symbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NIP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pesel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NIP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pesel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        @*<a class="btn btn-sm btn-outline-success" href="/card/CustomerEdit/@item.Id">Edytuj</a>*@
+                        <a class="btn btn-sm btn-outline-success" href="/Contractor/DetailsContractor/@item.Id">Podgląd</a>
+                        @*<a class="btn btn-sm btn-outline-danger" href="/card/CustomerDelete/@item.Id">Usuń</a>*@
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
