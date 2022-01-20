@@ -7,6 +7,6 @@ public class DicCountry
     public string Name { get; set; }
     [DisplayName("Czy Unia Europejska")]
     public bool UE { get; set; } = true;
-
+    string a = " Czy Ala ma kota";
     public IQueryable<Contractor> Customer { get; set; }
 }

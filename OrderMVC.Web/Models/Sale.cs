@@ -1,7 +1,7 @@
 ﻿namespace OrderMVC.Web.Models;
 public class Sale : BaseEntity
 {
-    [DisplayName("Rejeste")]
+    [DisplayName("Rejestr")]
     public string RregisterId { get; set; }
     public SaleRregister Rregister { get; set; }
     [DisplayName("Rok")]
@@ -13,7 +13,7 @@ public class Sale : BaseEntity
     [DisplayName("Symbol pełny")]
     public string NumberFull { get; set; }
     [DisplayName("Symbol uproszczony")]
-    public string NumberShrot { get; set; }
+    public string NumberShort { get; set; }
     [DisplayName("Data rejestracji")]
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
     public DateTime SaleData { get; set; }
@@ -25,7 +25,7 @@ public class Sale : BaseEntity
     [DisplayName("Data podpisania")]
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
     public DateTime DateSigning { get; set; }
-    [DisplayName("Termin tealizacji")]
+    [DisplayName("Termin realizacji")]
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
     public DateTime? Deadline { get; set; }
     [DisplayName("Data zakończenia")]
